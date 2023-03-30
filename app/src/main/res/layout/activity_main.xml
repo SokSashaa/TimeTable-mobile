@@ -38,12 +38,14 @@
             android:id="@+id/buttonGroupe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="Send"
             android:text="Для групп" />
 
         <Button
             android:id="@+id/buttonTeacher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="Send"
             android:text="Для преподователя" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

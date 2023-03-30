@@ -1,4 +1,64 @@
 package com.example.lab8;
 
-public class choosing_institute {
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
+
+public class choosing_institute extends AppCompatActivity {
+    SQLiteDatabase dbInstitute;
+    ListView list_institutes;
+    ArrayAdapter<String> adapter;
+    ArrayList<String> arrayListInstitutes = new ArrayList<String>();
+    Cursor cursor;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.choosing_institute);
+
+        try{
+            DBHelperForInstitute dbHelperForInstitute = new DBHelperForInstitute(this);
+            dbInstitute =dbHelperForInstitute.getWritableDatabase();
+            list_institutes = (ListView)findViewById(R.id.list_institutes);
+            setInformationForList();
+            adapter=new ArrayAdapter<String>(this, R.layout.list_item,R.id.textV, arrayListInstitutes);
+            list_institutes.setAdapter(adapter);
+
+        }
+        catch (Exception e){
+            Toast.makeText(this,e.toString(),Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void setInformationForList()
+    {
+        try{
+            cursor = dbInstitute.query(DBHelperForInstitute.TABLE_CONTACT,null,null,null,null,null,null);
+
+            if(cursor.moveToFirst()){
+                int nameIndex = cursor.getColumnIndex(DBHelper.KEY_NAME);
+                do{arrayListInstitutes.add(cursor.getString(nameIndex));}
+                while(cursor.moveToNext());
+            }
+            cursor.close();
+        }
+        catch (Exception e){ Toast.makeText(this,e.toString(),Toast.LENGTH_LONG).show();}
+    }
+    public void SendInstitutes(View v)
+    {
+        switch (v.getId())
+        {
+            case R.id.layout_institutes:
+
+                break;
+        }
+    }
 }
