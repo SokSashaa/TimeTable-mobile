@@ -1,6 +1,6 @@
 package com.example.lab8;
 
-import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -29,7 +29,7 @@ public class choosing_institute extends AppCompatActivity {
             dbInstitute =dbHelperForInstitute.getWritableDatabase();
             list_institutes = (ListView)findViewById(R.id.list_institutes);
             setInformationForList();
-            adapter=new ArrayAdapter<String>(this, R.layout.list_item,R.id.textV, arrayListInstitutes);
+            adapter=new ArrayAdapter<String>(this, R.layout.list_item,R.id.textVSpec, arrayListInstitutes);
             list_institutes.setAdapter(adapter);
 
         }
@@ -44,7 +44,7 @@ public class choosing_institute extends AppCompatActivity {
             cursor = dbInstitute.query(DBHelperForInstitute.TABLE_CONTACT,null,null,null,null,null,null);
 
             if(cursor.moveToFirst()){
-                int nameIndex = cursor.getColumnIndex(DBHelper.KEY_NAME);
+                int nameIndex = cursor.getColumnIndex(DBHelperForInstitute.KEY_NAME);
                 do{arrayListInstitutes.add(cursor.getString(nameIndex));}
                 while(cursor.moveToNext());
             }
@@ -56,8 +56,12 @@ public class choosing_institute extends AppCompatActivity {
     {
         switch (v.getId())
         {
-            case R.id.layout_institutes:
-
+            case R.id.layout_spec:
+                Integer index = list_institutes.getPositionForView(v);
+                String institute =arrayListInstitutes.get(index);
+                Intent intent = new Intent(choosing_institute.this,choosing_speciality.class);
+                intent.putExtra("institute",institute);
+                startActivity(intent);
                 break;
         }
     }

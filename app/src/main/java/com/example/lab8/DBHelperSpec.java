@@ -25,7 +25,6 @@ public class DBHelperSpec extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + TABLE_CONTACT + " (" + KEY_ID + " integer primary key,"+KEY_INSTITUTE+ " text," +KEY_NAME + " text"+ ") ");
 
-
     }
 
     @Override
