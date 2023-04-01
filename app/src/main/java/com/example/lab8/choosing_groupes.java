@@ -1,28 +1,27 @@
 package com.example.lab8;
 
-import android.content.ContentValues;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class choosing_speciality extends AppCompatActivity {
-    SQLiteDatabase dbSpeciality;
-    ListView list_spec;
+public class choosing_groupes extends AppCompatActivity {
+
+    SQLiteDatabase dbGroupes;
+    RecyclerView list_groupes;
     ArrayAdapter<String> adapter;
     ArrayList<String> arrayListSpec = new ArrayList<String>();
     Cursor cursor;
     TextView institute;
-    String inst;
+    TextView spec;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choosing_speciality);
@@ -60,19 +59,5 @@ public class choosing_speciality extends AppCompatActivity {
             cursor.close();
         }
         catch (Exception e){ Toast.makeText(this,e.toString(),Toast.LENGTH_LONG).show();}
-    }
-
-    public void SendSpec(View v)
-    {
-        switch (v.getId())
-        {
-            case R.id.layout_spec:
-                Integer index = list_spec.getPositionForView(v);
-                String spec =arrayListSpec.get(index);
-                Intent intent = new Intent(choosing_speciality.this,choosing_groupes.class);
-                intent.putExtra("spec",spec);
-                startActivity(intent);
-                break;
-        }
     }
 }

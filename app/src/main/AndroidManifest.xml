@@ -17,6 +17,8 @@
             android:exported="true"/>
         <activity android:name="choosing_speciality"
             android:exported="true"/>
+        <activity android:name=".choosing_groupes"
+            android:exported="true"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
