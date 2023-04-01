@@ -1,6 +1,5 @@
 package com.example.lab8;
 
-import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -71,6 +70,7 @@ public class choosing_speciality extends AppCompatActivity {
                 String spec =arrayListSpec.get(index);
                 Intent intent = new Intent(choosing_speciality.this,choosing_groupes.class);
                 intent.putExtra("spec",spec);
+                intent.putExtra("inst",inst);
                 startActivity(intent);
                 break;
         }

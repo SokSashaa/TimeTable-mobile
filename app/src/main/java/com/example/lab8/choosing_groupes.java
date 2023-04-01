@@ -9,35 +9,38 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
 public class choosing_groupes extends AppCompatActivity {
 
     SQLiteDatabase dbGroupes;
-    RecyclerView list_groupes;
+    ListView list_groupes;
     ArrayAdapter<String> adapter;
-    ArrayList<String> arrayListSpec = new ArrayList<String>();
+    ArrayList<String> arrayListGroupe = new ArrayList<String>();
     Cursor cursor;
     TextView institute;
     TextView spec;
+    String inst;
+    String specs;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.choosing_speciality);
+        setContentView(R.layout.choosing_groups);
 
-        institute = (TextView)findViewById(R.id.text_institute);
-        inst =getIntent().getStringExtra("institute");
+        institute = (TextView)findViewById(R.id.textG_Inst);
+        spec = (TextView)findViewById(R.id.textG_Spec);
+        inst =getIntent().getStringExtra("inst");
         institute.setText("Ваш институт: " + inst);
+        specs = getIntent().getStringExtra("spec");
+        spec.setText("Ваше направление: " + specs);
 
         try{
-            DBHelperSpec dbHelperSpec = new DBHelperSpec(this);
-            dbSpeciality =dbHelperSpec.getWritableDatabase();
-
-            list_spec = (ListView)findViewById(R.id.list_specialitys);
+            DBHelperGroupe dbHelperGroupe = new DBHelperGroupe(this);
+            dbGroupes =dbHelperGroupe.getWritableDatabase();
+            list_groupes = (ListView) findViewById(R.id.list_groups);
             setInformationForList();
-            adapter=new ArrayAdapter<String>(this, R.layout.list_item_spec,R.id.textVSpec, arrayListSpec);
-            list_spec.setAdapter(adapter);
+            adapter=new ArrayAdapter<String>(this, R.layout.list_item_groupe,R.id.textVSpec, arrayListGroupe);
+            list_groupes.setAdapter(adapter);
         }
         catch (Exception e) {
             Toast.makeText(this,e.toString(),Toast.LENGTH_LONG);
@@ -45,19 +48,20 @@ public class choosing_groupes extends AppCompatActivity {
     }
     private void setInformationForList()
     {
-        String selection = "institute = ?";
+        String selection = "institute = ? AND spec = ? ";
         try{
 
-            cursor = dbSpeciality.query(DBHelperSpec.TABLE_CONTACT,null,selection,new String[] {inst},null,null,null);
+            cursor = dbGroupes.query(DBHelperGroupe.TABLE_CONTACT,null,selection,new String[] {inst,specs},null,null,null);
 
 
             if(cursor.moveToFirst()){
-                int nameIndex = cursor.getColumnIndex(DBHelperSpec.KEY_NAME);
-                do{arrayListSpec.add(cursor.getString(nameIndex));}
+                int nameIndex = cursor.getColumnIndex(DBHelperGroupe.KEY_NAME);
+                do{arrayListGroupe.add(cursor.getString(nameIndex));}
                 while(cursor.moveToNext());
             }
             cursor.close();
         }
         catch (Exception e){ Toast.makeText(this,e.toString(),Toast.LENGTH_LONG).show();}
     }
+
 }

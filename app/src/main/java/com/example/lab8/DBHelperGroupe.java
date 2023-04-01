@@ -13,7 +13,7 @@ public class DBHelperGroupe extends SQLiteOpenHelper {
     public static final String TABLE_CONTACT="groupes";
 
     public static  final String KEY_ID="_id";
-    public static final String KEY_NAME="name";
+    public static final String KEY_NAME="groupe";
     public static final String KEY_INSTITUTE="institute";
     public static final String KEY_SPEC = "spec";
 
