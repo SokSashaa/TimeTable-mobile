@@ -22,6 +22,7 @@ public class choosing_day_of_the_week extends AppCompatActivity {
     String inst;
     String spec;
     String group;
+    String type_week;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,8 @@ public class choosing_day_of_the_week extends AppCompatActivity {
         inst = getIntent().getStringExtra("inst");
         spec = getIntent().getStringExtra("spec");
         group = getIntent().getStringExtra("groupe");
+        type_week=getIntent().getStringExtra("type_week");
+
         try{
             Resources res = getResources();
             String[] days = res.getStringArray(R.array.days_of_week);
@@ -67,6 +70,10 @@ public class choosing_day_of_the_week extends AppCompatActivity {
         textGroupe.setText("Ваша группа: " + group );
         textGroupe.setTextSize(20);
         layout.addView(textGroupe);
+        TextView textType = new TextView(this);
+        textType.setText("Тип недели: " + type_week );
+        textType.setTextSize(20);
+        layout.addView(textType);
         list_days = new ListView(this);
         layout.addView(list_days);
     }

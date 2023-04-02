@@ -72,8 +72,7 @@ public class choosing_groupes extends AppCompatActivity {
             case R.id.layout_spec:
                 Integer index = list_groupes.getPositionForView(v);
                 String groupe =arrayListGroupe.get(index);
-                Intent intent = new Intent(choosing_groupes.this,choosing_day_of_the_week.class);
-                intent.putExtra("index",0);
+                Intent intent = new Intent(choosing_groupes.this,choosing_week.class);
                 intent.putExtra("inst",inst);
                 intent.putExtra("spec",specs);
                 intent.putExtra("groupe",groupe);
