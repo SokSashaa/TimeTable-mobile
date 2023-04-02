@@ -1,4 +1,6 @@
 package com.example.lab8;
 
-public class choosing_teachers_sername {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class choosing_teachers_sername extends AppCompatActivity {
 }

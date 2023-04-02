@@ -19,6 +19,8 @@
             android:exported="true"/>
         <activity android:name=".choosing_groupes"
             android:exported="true"/>
+        <activity android:name=".choosing_day_of_the_week"
+            android:exported="true"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

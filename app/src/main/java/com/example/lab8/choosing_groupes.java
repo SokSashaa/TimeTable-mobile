@@ -1,8 +1,10 @@
 package com.example.lab8;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -61,7 +63,24 @@ public class choosing_groupes extends AppCompatActivity {
             }
             cursor.close();
         }
-        catch (Exception e){ Toast.makeText(this,e.toString(),Toast.LENGTH_LONG).show();}
+        catch (Exception e){Toast.makeText(this,e.toString(),Toast.LENGTH_LONG).show();}
     }
+    public void sendGroup(View v)
+    {
+        switch (v.getId())
+        {
+            case R.id.layout_spec:
+                Integer index = list_groupes.getPositionForView(v);
+                String groupe =arrayListGroupe.get(index);
+                Intent intent = new Intent(choosing_groupes.this,choosing_day_of_the_week.class);
+                intent.putExtra("index",0);
+                intent.putExtra("inst",inst);
+                intent.putExtra("spec",specs);
+                intent.putExtra("groupe",groupe);
+                startActivity(intent);
+                break;
+        }
+    }
+
 
 }
