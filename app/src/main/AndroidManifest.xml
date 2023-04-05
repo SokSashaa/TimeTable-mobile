@@ -23,6 +23,8 @@
             android:exported="true"/>
         <activity android:name=".choosing_week"
             android:exported="true"/>
+        <activity android:name=".timetable"
+            android:exported="true"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
