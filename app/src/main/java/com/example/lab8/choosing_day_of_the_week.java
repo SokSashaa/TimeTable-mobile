@@ -1,9 +1,11 @@
 package com.example.lab8;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -23,6 +25,7 @@ public class choosing_day_of_the_week extends AppCompatActivity {
     String spec;
     String group;
     String type_week;
+    String[] days;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +37,7 @@ public class choosing_day_of_the_week extends AppCompatActivity {
 
         try{
             Resources res = getResources();
-            String[] days = res.getStringArray(R.array.days_of_week);
+            days = res.getStringArray(R.array.days_of_week);
             adapter=new ArrayAdapter<String>(this, R.layout.list_item_days_week,R.id.textVSpec,days);}
         catch (Exception e ){
             Toast.makeText(this,e.toString(),Toast.LENGTH_LONG);
@@ -87,5 +90,23 @@ public class choosing_day_of_the_week extends AppCompatActivity {
         layout.addView(textTeacher);
         list_days = new ListView(this);
         layout.addView(list_days);
+    }
+
+    public void sendDay(View v)
+    {
+        switch (v.getId())
+        {
+            case R.id.layout_spec:
+                Integer index = list_days.getPositionForView(v);
+                String day =days[index];
+                Intent intent = new Intent(choosing_day_of_the_week.this,timetable.class);
+                intent.putExtra("inst",inst);
+                intent.putExtra("spec",spec);
+                intent.putExtra("groupe",group);
+                intent.putExtra("type_week",type_week);
+                intent.putExtra("day",day);
+                startActivity(intent);
+                break;
+        }
     }
 }

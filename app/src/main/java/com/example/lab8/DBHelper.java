@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    public static final int DATABASE_VERSION=1;
+    public static final int DATABASE_VERSION=2;
     public static final String DATABASE_NAME = "contract";
     public static final String TABLE_CONTACT="contacts";
 
@@ -24,7 +24,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String KEY_PLACE = "place";
     public static final String KEY_COMMENT = "comment";
     public static final String KEY_TYPE_SUBJECT = "type_subject";
-    public static final String KEY_TIME = "time";
+    public static final String KEY_NUMBER = "number";
 
 
 
@@ -41,7 +41,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 + KEY_GROUP + " text,"
                 + KEY_TYPE_WEEK + " text,"
                 + KEY_DAY_OF_WEEK + " text,"
-                + KEY_TIME + " text,"
+                + KEY_NUMBER + " integer,"
                 + KEY_SUBJECT + " text,"
                 + KEY_PLACE + " text,"
                 + KEY_TYPE_SUBJECT + " text,"

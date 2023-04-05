@@ -8,6 +8,7 @@
         android:id="@+id/layout_spec"
         android:layout_width="407dp"
         android:layout_height="68dp"
+        android:onClick="sendDay"
         android:orientation="vertical"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp"
