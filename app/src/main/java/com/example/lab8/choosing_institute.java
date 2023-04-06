@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -63,6 +65,25 @@ public class choosing_institute extends AppCompatActivity {
                 intent.putExtra("institute",institute);
                 startActivity(intent);
                 break;
+        }
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.menu_base:
+                return true;
+            case R.id.help:
+                return true;
+            case R.id.exit:
+                return true;
+            default:
+                return true;
         }
     }
 }
