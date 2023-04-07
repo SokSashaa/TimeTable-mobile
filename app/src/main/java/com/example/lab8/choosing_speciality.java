@@ -75,4 +75,10 @@ public class choosing_speciality extends AppCompatActivity {
                 break;
         }
     }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        // Закрываем подключение
+        dbSpeciality.close();
+    }
 }

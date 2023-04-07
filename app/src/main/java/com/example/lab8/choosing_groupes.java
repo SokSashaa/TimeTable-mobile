@@ -81,6 +81,12 @@ public class choosing_groupes extends AppCompatActivity {
                 break;
         }
     }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        // Закрываем подключение
+        dbGroupes.close();
+    }
 
 
 }

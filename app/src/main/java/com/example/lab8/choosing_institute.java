@@ -87,4 +87,10 @@ public class choosing_institute extends AppCompatActivity {
                 return true;
         }
     }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        // Закрываем подключение
+        dbInstitute.close();
+    }
 }

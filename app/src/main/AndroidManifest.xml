@@ -25,6 +25,8 @@
             android:exported="true"/>
         <activity android:name=".timetable"
             android:exported="true"/>
+        <activity android:name=".forHelper"
+            android:exported="true"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

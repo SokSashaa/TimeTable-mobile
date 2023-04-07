@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_base:
                 return true;
             case R.id.help:
+                Intent intent1 = new Intent();
                 return true;
             case R.id.exit:
                 return true;

@@ -89,4 +89,10 @@ public class timetable extends AppCompatActivity {
         }
         catch (Exception e){ Toast.makeText(this,e.toString(),Toast.LENGTH_LONG).show();}
     }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        // Закрываем подключение
+        dbtimetable.close();
+    }
 }
