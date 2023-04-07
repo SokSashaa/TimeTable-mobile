@@ -38,7 +38,8 @@ public class choosing_groupes extends AppCompatActivity {
 
         try{
             DBHelperGroupe dbHelperGroupe = new DBHelperGroupe(this);
-            dbGroupes =dbHelperGroupe.getWritableDatabase();
+            dbHelperGroupe.create_db();
+            dbGroupes =dbHelperGroupe.open();
             list_groupes = (ListView) findViewById(R.id.list_groups);
             setInformationForList();
             adapter=new ArrayAdapter<String>(this, R.layout.list_item_groupe,R.id.textVSpec, arrayListGroupe);

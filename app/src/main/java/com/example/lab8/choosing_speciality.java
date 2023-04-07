@@ -32,8 +32,8 @@ public class choosing_speciality extends AppCompatActivity {
 
         try{
             DBHelperSpec dbHelperSpec = new DBHelperSpec(this);
-            dbSpeciality =dbHelperSpec.getWritableDatabase();
-
+            dbHelperSpec.create_db();
+            dbSpeciality = dbHelperSpec.open();
             list_spec = (ListView)findViewById(R.id.list_specialitys);
             setInformationForList();
             adapter=new ArrayAdapter<String>(this, R.layout.list_item_spec,R.id.textVSpec, arrayListSpec);

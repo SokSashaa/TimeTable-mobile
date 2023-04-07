@@ -28,7 +28,8 @@ public class choosing_institute extends AppCompatActivity {
 
         try{
             DBHelperForInstitute dbHelperForInstitute = new DBHelperForInstitute(this);
-            dbInstitute =dbHelperForInstitute.getWritableDatabase();
+            dbHelperForInstitute.create_db();
+            dbInstitute =dbHelperForInstitute.open();
             list_institutes = (ListView)findViewById(R.id.list_institutes);
             setInformationForList();
             adapter=new ArrayAdapter<String>(this, R.layout.list_item,R.id.textVSpec, arrayListInstitutes);
