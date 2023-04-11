@@ -4,7 +4,7 @@
   <item android:title="@string/about_us"
       android:orderInCategory="100"
       app:showAsAction="never"
-      android:id="@+id/menu_base">
+      android:id="@+id/about_us">
   </item>
     <item android:title="@string/help"
         android:orderInCategory="100"

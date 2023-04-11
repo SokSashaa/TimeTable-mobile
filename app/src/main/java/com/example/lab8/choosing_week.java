@@ -124,7 +124,8 @@ public class choosing_week extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
-            case R.id.menu_base:
+            case R.id.about_us:
+                startActivity(new Intent(choosing_week.this,about_us.class));
                 return true;
             case R.id.help:
                 Intent intent1 = new Intent(choosing_week.this,forHelper.class);

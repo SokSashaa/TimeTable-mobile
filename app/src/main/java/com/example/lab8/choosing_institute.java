@@ -77,7 +77,8 @@ public class choosing_institute extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
-            case R.id.menu_base:
+            case R.id.about_us:
+                startActivity(new Intent(choosing_institute.this,about_us.class));
                 return true;
             case R.id.help:
                 Intent intent1 = new Intent(choosing_institute.this, forHelper.class);
