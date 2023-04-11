@@ -37,7 +37,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                tools:text="Студент Соколов Александр Группа 21-ИСбо-1" />
+                android:text="Студент Соколов Александр Группа 21-ИСбо-1" />
 
             <Button
                 android:id="@+id/button"
@@ -65,7 +65,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                tools:text="Студент Авдонин Кирилл Группа 21-ИСбо-1" />
+                android:text="Студент Авдонин Кирилл Группа 21-ИСбо-1" />
 
             <Button
                 android:id="@+id/button2"
