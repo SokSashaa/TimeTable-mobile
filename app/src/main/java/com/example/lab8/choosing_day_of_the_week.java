@@ -5,6 +5,8 @@ import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
@@ -26,35 +28,33 @@ public class choosing_day_of_the_week extends AppCompatActivity {
     String group;
     String type_week;
     String[] days;
+    String sername;
+    int index;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choosing_day_of_the_week);
-        inst = getIntent().getStringExtra("inst");
-        spec = getIntent().getStringExtra("spec");
-        group = getIntent().getStringExtra("groupe");
+        Resources res = getResources();
+        days = res.getStringArray(R.array.days_of_week);
+        adapter=new ArrayAdapter<String>(this, R.layout.list_item_days_week,R.id.textVSpec,days);
+
         type_week=getIntent().getStringExtra("type_week");
-
-        try{
-            Resources res = getResources();
-            days = res.getStringArray(R.array.days_of_week);
-            adapter=new ArrayAdapter<String>(this, R.layout.list_item_days_week,R.id.textVSpec,days);}
-        catch (Exception e ){
-            Toast.makeText(this,e.toString(),Toast.LENGTH_LONG);
-        }
-
-
-        int index = getIntent().getIntExtra("index",2);
+        index = getIntent().getIntExtra("index",2);
         switch (index){
             case 0:
-                createLayoutForGroupe();
-                list_days.setAdapter(adapter);
-                break;
-            case 1:
+                sername = getIntent().getStringExtra("sername");
+
                 createLayoutForTeacher();
                 list_days.setAdapter(adapter);
                 break;
-            default: break;
+            case 1:
+                inst = getIntent().getStringExtra("inst");
+                spec = getIntent().getStringExtra("spec");
+                group = getIntent().getStringExtra("groupe");
+                createLayoutForGroupe();
+                list_days.setAdapter(adapter);
+                break;
+            default:   Toast.makeText(this,"Не найден индекс перехода",Toast.LENGTH_LONG).show();break;
         }
 
     }
@@ -85,9 +85,13 @@ public class choosing_day_of_the_week extends AppCompatActivity {
     {
         layout = (LinearLayout)findViewById(R.id.week_layout);
         TextView textTeacher = new TextView(this);
-        textTeacher.setText("Фамилия преподавателя: " );
+        textTeacher.setText("Фамилия преподавателя: " + sername);
         textTeacher.setTextSize(20);
         layout.addView(textTeacher);
+        TextView textType = new TextView(this);
+        textType.setText("Тип недели: " + type_week );
+        textType.setTextSize(20);
+        layout.addView(textType);
         list_days = new ListView(this);
         layout.addView(list_days);
     }
@@ -97,16 +101,48 @@ public class choosing_day_of_the_week extends AppCompatActivity {
         switch (v.getId())
         {
             case R.id.layout_spec:
-                Integer index = list_days.getPositionForView(v);
-                String day =days[index];
+                Integer indexpos = list_days.getPositionForView(v);
+                String day =days[indexpos];
                 Intent intent = new Intent(choosing_day_of_the_week.this,timetable.class);
-                intent.putExtra("inst",inst);
-                intent.putExtra("spec",spec);
-                intent.putExtra("groupe",group);
+                intent.putExtra("index",index);
+                if(index==0){
+                    intent.putExtra("sername",sername);
+                }
+                if(index==1){
+                    intent.putExtra("inst",inst);
+                    intent.putExtra("spec",spec);
+                    intent.putExtra("groupe",group);
+
+                }
                 intent.putExtra("type_week",type_week);
                 intent.putExtra("day",day);
                 startActivity(intent);
                 break;
+        }
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.menu_base:
+                return true;
+            case R.id.help:
+                Intent intent1 = new Intent(choosing_day_of_the_week.this, forHelper.class);
+                startActivity(intent1);
+                return true;
+            case R.id.exit:
+                Intent intent3 = new Intent(choosing_day_of_the_week.this,MainActivity.class);
+                intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent3.putExtra("EXIT",true);
+                startActivity(intent3);
+                return true;
+            default:
+                return true;
         }
     }
 }

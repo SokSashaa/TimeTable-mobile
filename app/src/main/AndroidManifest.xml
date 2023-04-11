@@ -27,6 +27,8 @@
             android:exported="true"/>
         <activity android:name=".forHelper"
             android:exported="true"/>
+        <activity android:name=".about_us"
+            android:exported="true"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

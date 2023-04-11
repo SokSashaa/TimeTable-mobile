@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -80,5 +82,30 @@ public class choosing_speciality extends AppCompatActivity {
         super.onDestroy();
         // Закрываем подключение
         dbSpeciality.close();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.menu_base:
+                return true;
+            case R.id.help:
+                Intent intent1 = new Intent(choosing_speciality.this, forHelper.class);
+                startActivity(intent1);
+                return true;
+            case R.id.exit:
+                Intent intent3 = new Intent(choosing_speciality.this,MainActivity.class);
+                intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent3.putExtra("EXIT",true);
+                startActivity(intent3);
+                return true;
+            default:
+                return true;
+        }
     }
 }

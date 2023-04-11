@@ -80,8 +80,14 @@ public class choosing_institute extends AppCompatActivity {
             case R.id.menu_base:
                 return true;
             case R.id.help:
+                Intent intent1 = new Intent(choosing_institute.this, forHelper.class);
+                startActivity(intent1);
                 return true;
             case R.id.exit:
+                Intent intent3 = new Intent(choosing_institute.this,MainActivity.class);
+                intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent3.putExtra("EXIT",true);
+                startActivity(intent3);
                 return true;
             default:
                 return true;
@@ -93,4 +99,5 @@ public class choosing_institute extends AppCompatActivity {
         // Закрываем подключение
         dbInstitute.close();
     }
+
 }

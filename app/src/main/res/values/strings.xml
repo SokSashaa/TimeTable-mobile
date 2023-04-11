@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Lab8</string>
     <string name="exit">Выход</string>
-    <string name="help">Помощь</string>
-    <string name="menu_base">Настройки для баз</string>
+    <string name="help">Помощь по датам</string>
+    <string name="about_us">О нас</string>
 
 </resources>

@@ -15,6 +15,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+    }
+    @Override public void onResume() {
+
+        super.onResume();
+        boolean EXIT = getIntent().getBooleanExtra("EXIT",false);
+        if(EXIT)
+        {
+            finishAndRemoveTask();
+        }
     }
     public void Send(View view)
     {
@@ -46,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent1);
                 return true;
             case R.id.exit:
+                finishAndRemoveTask();
                 return true;
             default:
                 return true;

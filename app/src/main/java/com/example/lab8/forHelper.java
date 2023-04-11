@@ -1,14 +1,19 @@
 package com.example.lab8;
 
 import android.content.Context;
+import android.content.res.AssetFileDescriptor;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class forHelper extends AppCompatActivity {
 
@@ -18,6 +23,8 @@ public class forHelper extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_helper);
+
+
 
         month = new TextView[] {
                 (TextView)findViewById(R.id.textView26),
@@ -38,6 +45,7 @@ public class forHelper extends AppCompatActivity {
                 (TextView)findViewById(R.id.textView39),
                 (TextView)findViewById(R.id.textView40)
         };
+        openFile();
     }
     private void open_file() {
         String name_file ="help.txt";
@@ -50,6 +58,34 @@ public class forHelper extends AppCompatActivity {
             catch (Exception e){
 
             }
+        }
+    }
+    private void openFile() {
+        try {
+            String fileName ="help.txt";
+            //AssetFileDescriptor descriptor = getAssets().openFd("help.txt");
+            InputStream inputStream = getAssets().open(fileName);
+
+            if (inputStream != null) {
+                InputStreamReader isr = new InputStreamReader(inputStream);
+                BufferedReader reader = new BufferedReader(isr);
+                String line;
+                StringBuilder builder = new StringBuilder();
+                int i = 0;
+                int j = 0;
+                while ((line = reader.readLine()) != null) {
+                    String[] s = line.split( "/");
+                    month[i].setText(s[0]);i++;
+                    String[] s1 = s[1].split(">");
+                    day[j].setText(s1[0]);j++;
+                    day[j].setText(s1[1]);j++;
+                }
+                inputStream.close();
+            }
+        } catch (Throwable t) {
+            Toast.makeText(getApplicationContext(),
+                    "Exception: " + t.toString(),
+                    Toast.LENGTH_LONG).show();
         }
     }
 }
