@@ -15,7 +15,8 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@drawable/border">>
 
             <TextView
                 android:id="@+id/textView9"
@@ -36,7 +37,8 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@drawable/border">
 
             <TextView
                 android:id="@+id/textView10"
@@ -57,7 +59,8 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@drawable/border">>
 
             <TextView
                 android:id="@+id/textView11"
@@ -78,7 +81,8 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@drawable/border">>
 
             <TextView
                 android:id="@+id/textView12"
@@ -99,7 +103,8 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@drawable/border">>
 
             <TextView
                 android:id="@+id/textView13"
@@ -120,7 +125,8 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@drawable/border">>
 
             <TextView
                 android:id="@+id/textView14"
@@ -141,7 +147,8 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@drawable/border">>
 
             <TextView
                 android:id="@+id/textView15"
