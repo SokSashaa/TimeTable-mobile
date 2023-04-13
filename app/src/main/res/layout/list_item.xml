@@ -11,7 +11,9 @@
         android:onClick="SendInstitutes"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        tools:layout_editor_absoluteY="1dp"
+        tools:ignore="MissingConstraints"
+        android:background="@drawable/border">
 
         <TextView
             android:id="@+id/textVSpec"

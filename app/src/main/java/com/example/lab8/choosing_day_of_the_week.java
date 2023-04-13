@@ -77,6 +77,9 @@ public class choosing_day_of_the_week extends AppCompatActivity {
         textType.setText("Тип недели: " + type_week );
         textType.setTextSize(20);
         layout.addView(textType);
+        TextView text = new TextView(this);
+        text.setText("");
+        layout.addView(text);
         list_days = new ListView(this);
         layout.addView(list_days);
     }
@@ -92,6 +95,9 @@ public class choosing_day_of_the_week extends AppCompatActivity {
         textType.setText("Тип недели: " + type_week );
         textType.setTextSize(20);
         layout.addView(textType);
+        TextView text = new TextView(this);
+        text.setText("");
+        layout.addView(text);
         list_days = new ListView(this);
         layout.addView(list_days);
     }

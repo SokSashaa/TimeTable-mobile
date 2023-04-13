@@ -71,6 +71,9 @@ public class choosing_week extends AppCompatActivity {
             textGroupe.setText("Ваша группа: " + group );
             textGroupe.setTextSize(20);
             layout.addView(textGroupe);
+            TextView text = new TextView(this);
+            text.setText("");
+            layout.addView(text);
             list_week = new ListView(this);
             layout.addView(list_week);
         }
@@ -84,6 +87,9 @@ public class choosing_week extends AppCompatActivity {
         textSername.setText("Фамилия: " +sername);
         textSername.setTextSize(20);
         layout.addView(textSername);
+        TextView text = new TextView(this);
+        text.setText("");
+        layout.addView(text);
         list_week = new ListView(this);
         layout.addView(list_week);
     }

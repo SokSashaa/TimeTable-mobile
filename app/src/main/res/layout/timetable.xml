@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/border">>
+            android:background="@drawable/border">
 
             <TextView
                 android:id="@+id/textView9"
@@ -29,7 +29,7 @@
             <TextView
                 android:id="@+id/textView16"
                 android:layout_width="325dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:textSize="16sp" />
         </TableRow>
@@ -51,7 +51,7 @@
             <TextView
                 android:id="@+id/textView17"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:textSize="16sp" />
         </TableRow>
@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/border">>
+            android:background="@drawable/border">
 
             <TextView
                 android:id="@+id/textView11"
@@ -73,7 +73,7 @@
             <TextView
                 android:id="@+id/textView18"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:textSize="16sp" />
         </TableRow>
@@ -82,7 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/border">>
+            android:background="@drawable/border">
 
             <TextView
                 android:id="@+id/textView12"
@@ -104,7 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/border">>
+            android:background="@drawable/border">
 
             <TextView
                 android:id="@+id/textView13"
@@ -117,7 +117,7 @@
             <TextView
                 android:id="@+id/textView20"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:textSize="16sp" />
         </TableRow>
@@ -126,7 +126,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/border">>
+            android:background="@drawable/border">
 
             <TextView
                 android:id="@+id/textView14"
@@ -139,7 +139,7 @@
             <TextView
                 android:id="@+id/textView22"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:textSize="16sp" />
         </TableRow>
@@ -148,7 +148,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/border">>
+            android:background="@drawable/border">
 
             <TextView
                 android:id="@+id/textView15"
@@ -161,7 +161,7 @@
             <TextView
                 android:id="@+id/textView21"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:textSize="16sp" />
         </TableRow>

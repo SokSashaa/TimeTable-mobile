@@ -6,17 +6,20 @@
 
     <LinearLayout
         android:id="@+id/layout_sername"
-        android:layout_width="404dp"
-        android:layout_height="46dp"
+        android:layout_width="403dp"
+        android:layout_height="54dp"
         android:onClick="sendSername"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="3dp">
+        tools:layout_editor_absoluteY="3dp"
+        tools:ignore="MissingConstraints"
+        android:background="@drawable/border">
 
         <TextView
             android:id="@+id/textSername"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
             android:text="TextView"
             android:textSize="16sp" />
 

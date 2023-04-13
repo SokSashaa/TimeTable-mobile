@@ -121,13 +121,13 @@ public class timetable extends AppCompatActivity {
                     String teach = cursor.getString(teacherIndex);
                     String com = cursor.getString(commentIndex);
                     String s = array[numberInd-1].getText().toString();
-                    if(s=="")
+                    if(s.isEmpty())
                     {
                         array[numberInd-1].setText(sub + "\n" + pl + "("+ tp + ") " + teach + "\n" + com);
                     }
                     else {
-                        array[numberInd-1].setTextSize(11);
-                        s = s +"\n" + "-----" + "\n" + sub + "\n" + pl + "("+ tp + ") " + teach + "\n" + com;
+                      //  array[numberInd-1].setTextSize(11);
+                        s += "\n" + "-----" + "\n" + sub + "\n" + pl + "("+ tp + ") " + teach + "\n" + com;
                         array[numberInd-1].setText(s);
                     }
 

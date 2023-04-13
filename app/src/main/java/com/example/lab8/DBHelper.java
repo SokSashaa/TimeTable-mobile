@@ -17,7 +17,7 @@ import java.io.OutputStream;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    public static final int DATABASE_VERSION=2;
+    public static final int DATABASE_VERSION=3;
     public static final String DATABASE_NAME = "contract";
     public static final String TABLE_CONTACT="contacts";
     public static String DATABASE_PATH = "";
