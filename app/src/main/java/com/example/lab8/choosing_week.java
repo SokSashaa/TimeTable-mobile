@@ -2,17 +2,21 @@ package com.example.lab8;
 
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class choosing_week extends AppCompatActivity {
     LinearLayout layout;
@@ -62,20 +66,29 @@ public class choosing_week extends AppCompatActivity {
             TextView textInst = new TextView(this);
             textInst.setText("Ваш институт: " +inst);
             textInst.setTextSize(20);
+            textInst.setTextColor(Color.rgb(0,0,0));
             layout.addView(textInst);
             TextView textSpec = new TextView(this);
             textSpec.setText("Ваше направление: " + spec);
             textSpec.setTextSize(20);
+            textSpec.setTextColor(Color.rgb(0,0,0));
             layout.addView(textSpec);
             TextView textGroupe = new TextView(this);
             textGroupe.setText("Ваша группа: " + group );
             textGroupe.setTextSize(20);
+            textGroupe.setTextColor(Color.rgb(0,0,0));
             layout.addView(textGroupe);
             TextView text = new TextView(this);
             text.setText("");
             layout.addView(text);
             list_week = new ListView(this);
+            list_week.setMinimumHeight(380);
             layout.addView(list_week);
+            ImageView imageView = new ImageView(this);
+            imageView.setImageResource(R.drawable.picture);
+            imageView.setPadding(100,550,0,0);
+            layout.addView(imageView);
+
         }
         catch (Exception r){}
 
@@ -84,14 +97,19 @@ public class choosing_week extends AppCompatActivity {
     {
         layout = (LinearLayout)findViewById(R.id.layoutWeek);
         TextView textSername = new TextView(this);
-        textSername.setText("Фамилия: " +sername);
+        textSername.setText("Фамилия преподавателя: " +sername);
         textSername.setTextSize(20);
+        textSername.setTextColor(Color.rgb(0,0,0));
         layout.addView(textSername);
         TextView text = new TextView(this);
         text.setText("");
         layout.addView(text);
         list_week = new ListView(this);
         layout.addView(list_week);
+        ImageView imageView = new ImageView(this);
+        imageView.setImageResource(R.drawable.picture);
+        imageView.setPadding(100,550,0,0);
+        layout.addView(imageView);
     }
 
     public void sendWeek(View view)

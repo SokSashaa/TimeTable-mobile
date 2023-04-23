@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TableLayout;
@@ -51,12 +52,14 @@ public class timetable extends AppCompatActivity {
                 case 0:
                     sername = getIntent().getStringExtra("sername");
                     setInformationForListSername();
+                    checkText();
                     break;
                 case 1:
                     inst = getIntent().getStringExtra("inst");
                     spec = getIntent().getStringExtra("spec");
                     group = getIntent().getStringExtra("groupe");
                     setInformationForListGroup();
+                    checkText();
                     break;
                 default:  Toast.makeText(this,"Не найден индекс перехода",Toast.LENGTH_LONG);break;
             }
@@ -71,6 +74,17 @@ public class timetable extends AppCompatActivity {
         }
 
 
+    }
+    private void checkText()
+    {
+       for(int i = 0;i< array.length;i++){
+           TextView textView = array[i];
+           String s = textView.getText().toString();
+           if(s==null || s==""){
+               textView.setBackground(null);
+           }
+           else textView.setBackground(array[i].getBackground());
+       }
     }
 
     private void setInformationForListSername()

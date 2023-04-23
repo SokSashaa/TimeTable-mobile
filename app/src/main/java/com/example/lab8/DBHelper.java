@@ -62,11 +62,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-
-       // db.execSQL("drop table if exists " + TABLE_CONTACT);
-        //onCreate(db);
-    }
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {}
     void create_db(){
 
         File file = new File(DATABASE_PATH);
@@ -90,7 +86,6 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
     public SQLiteDatabase open()throws SQLException {
-
         return SQLiteDatabase.openDatabase(DATABASE_PATH, null, SQLiteDatabase.OPEN_READWRITE);
     }
 }

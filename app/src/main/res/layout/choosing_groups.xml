@@ -15,6 +15,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Выберите группу"
+            android:textColor="#000000"
             android:textSize="34sp" />
 
         <TextView
@@ -27,6 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
+            android:textColor="#000000"
             android:textSize="20sp" />
 
         <TextView
@@ -34,6 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
+            android:textColor="#000000"
             android:textSize="20sp" />
 
         <TextView
@@ -44,7 +47,14 @@
         <ListView
             android:id="@+id/list_groups"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="380dp" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/picture"
+            android:paddingLeft="100dp"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
