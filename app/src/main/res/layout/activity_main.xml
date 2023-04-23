@@ -47,28 +47,30 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonGroupe"
                 android:layout_width="230dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="Send"
                 android:text="Для групп"
                 android:textColor="#000000"
                 app:backgroundTint="#9D9CD4"
+                app:cornerRadius="20dp"
                 app:strokeColor="#410F80"
-                app:strokeWidth="1dp">
-            </com.google.android.material.button.MaterialButton>
+                app:strokeWidth="1dp"></com.google.android.material.button.MaterialButton>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonTeacher"
                 android:layout_width="230dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="Send"
                 android:text="Для преподователя"
                 android:textColor="#000000"
                 app:backgroundTint="#9D9CD4"
-                app:strokeWidth="1dp"
-                app:strokeColor="#410F80"/>
-
+                app:cornerRadius="20dp"
+                app:strokeColor="#410F80"
+                app:strokeWidth="1dp" />
         </LinearLayout>
 
         <LinearLayout
